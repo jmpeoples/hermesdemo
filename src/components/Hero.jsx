@@ -32,7 +32,7 @@ import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { Link } from "react-router-dom"
 
 const navigation = [
-  { name: 'Subscriptions', href: '/', icon: HomeIcon, current: true },
+  { name: 'My Subscriptions', href: '/', icon: HomeIcon, current: true },
   { name: 'Browse', href: '/Browse', icon: UsersIcon, current: false },
   { name: 'Teams', href: '#', icon: FolderIcon, current: false },
   { name: 'Reports', href: '#', icon: ChartBarIcon, current: false },
@@ -263,7 +263,7 @@ export function Hero() {
           <main className="flex-1">
             <div className="py-6">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-                <h1 className="text-2xl font-semibold text-gray-900">Subscriptions</h1>
+                <h1 className="text-2xl font-semibold text-gray-900">My Subscriptions</h1>
               </div>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
                 {/* Replace with your content */}

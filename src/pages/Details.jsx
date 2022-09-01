@@ -15,7 +15,7 @@ import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { PaperClipIcon } from '@heroicons/react/20/solid'
 
 const navigation = [
-    { name: 'Subscriptions', href: '/', icon: HomeIcon, current: true },
+    { name: 'My Subscriptions', href: '/', icon: HomeIcon, current: true },
     { name: 'Browse', href: '/Browse', icon: UsersIcon, current: false },
     { name: 'Teams', href: '#', icon: FolderIcon, current: false },
     { name: 'Reports', href: '#', icon: ChartBarIcon, current: false },
