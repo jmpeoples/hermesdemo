@@ -133,7 +133,7 @@ function Browse() {
                     src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=500"
                     alt="Workflow"
                   />
-                  <h2 class="text-gray-300">Hermes</h2>
+                  <h2 className="text-gray-300">Hermes</h2>
                 </div>
                 <div className="flex flex-1 flex-col overflow-y-auto">
                   <nav className="flex-1 space-y-1 px-2 py-4">

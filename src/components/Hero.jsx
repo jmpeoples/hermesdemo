@@ -29,7 +29,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
-import { Link } from "react-router-dom"
+import Link from 'next/link'
 
 const navigation = [
   { name: 'My Subscriptions', href: '/', icon: HomeIcon, current: true },
@@ -150,7 +150,7 @@ export function Hero() {
                 src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=500"
                 alt="Workflow"
               />
-              <h2 class="text-gray-300">Hermes</h2>
+              <h2 className="text-gray-300">Hermes</h2>
             </div>
             <div className="flex flex-1 flex-col overflow-y-auto">
               <nav className="flex-1 space-y-1 px-2 py-4">
@@ -384,9 +384,9 @@ export default function SubscriptionList() {
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.role}</td>
                       <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                     
-                      <a href="/Details" className="mr-4 text-indigo-600 hover:text-indigo-900">
+                      <Link href="/Details" className="mr-4 text-indigo-600 hover:text-indigo-900">
                           Details<span className="sr-only">, {person.name}</span>
-                        </a>
+                        </Link>
 
                       <a href="#" className="text-indigo-600 hover:text-indigo-900">
                           unsubscribe<span className="sr-only">, {person.name}</span>
