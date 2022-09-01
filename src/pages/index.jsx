@@ -20,17 +20,17 @@ export default function Home() {
           content="By leveraging insights from our network of industry insiders, you’ll know exactly when to buy to maximize profit, and exactly when to sell to avoid painful losses."
         />
       </Head>
-      <Header />
+      {/* <Header /> */}
       <main>
         <Hero />
-        <PrimaryFeatures />
+        {/* <PrimaryFeatures />
         <SecondaryFeatures />
         <CallToAction />
         <Reviews />
         <Pricing />
-        <Faqs />
+        <Faqs /> */}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }
