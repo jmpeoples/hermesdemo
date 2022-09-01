@@ -12,14 +12,14 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
+import { PaperClipIcon } from '@heroicons/react/20/solid'
 
 const navigation = [
-    { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
-    { name: 'Team', href: '#', icon: UsersIcon, current: false },
-    { name: 'Projects', href: '#', icon: FolderIcon, current: false },
-    { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
-    { name: 'Documents', href: '#', icon: InboxIcon, current: false },
+    { name: 'Subscriptions', href: '/', icon: HomeIcon, current: true },
+    { name: 'Browse', href: '#', icon: UsersIcon, current: false },
+    { name: 'Teams', href: '#', icon: FolderIcon, current: false },
     { name: 'Reports', href: '#', icon: ChartBarIcon, current: false },
+    { name: 'Settings', href: '#', icon: CalendarIcon, current: false },
   ]
   const userNavigation = [
     { name: 'Your Profile', href: '#' },
@@ -245,11 +245,11 @@ function Details() {
               <main className="flex-1">
                 <div className="py-6">
                   <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-                    <h1 className="text-2xl font-semibold text-gray-900">Dashboard</h1>
+                    <h1 className="mb-8 text-2xl font-semibold text-gray-900">Solarbreeze details</h1>
                   </div>
                   <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
                     {/* Replace with your content */}
-                    
+                     <DescriptionList />
                     {/* /End replace */}
                   </div>
                 </div>
@@ -260,3 +260,116 @@ function Details() {
   }
   
   export default Details
+
+
+
+
+
+export function DescriptionList() {
+  return (
+    <div className="overflow-hidden bg-white shadow sm:rounded-lg">
+      <div className="px-4 py-5 sm:px-6">
+        <h3 className="text-lg font-medium leading-6 text-gray-900">Subscription Information</h3>
+        <p className="mt-1 max-w-2xl text-sm text-gray-500">details and application.</p>
+        <SelectionList />
+      </div>
+      <div className="border-t border-gray-200 px-4 py-5 sm:p-0">
+        <dl className="sm:divide-y sm:divide-gray-200">
+          <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
+            <dt className="text-sm font-medium text-gray-500">Type</dt>
+            <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">Dataset</dd>
+          </div>
+          <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
+            <dt className="text-sm font-medium text-gray-500">Role</dt>
+            <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">member</dd>
+          </div>
+          <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
+            <dt className="text-sm font-medium text-gray-500">GET</dt>
+            <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                <p>/item/{`{item_id}`}</p>
+            </dd>
+          </div>
+          <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
+            <dt className="text-sm font-medium text-gray-500">POST</dt>
+            <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                <p>/item/{`{item_id}`}</p>
+            </dd>
+          </div>
+          <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
+            <dt className="text-sm font-medium text-gray-500">UPDATE</dt>
+            <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                <p>/item/{`{item_id}`}</p>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  )
+}
+
+
+export function SelectionList() {
+    return (
+      <fieldset className="space-y-5">
+        <legend className="sr-only">Notifications</legend>
+        <div className="relative flex items-start">
+          <div className="flex h-5 items-center">
+            <input
+              id="comments"
+              aria-describedby="comments-description"
+              name="comments"
+              type="checkbox"
+              className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+            />
+          </div>
+          <div className="ml-3 text-sm">
+            <label htmlFor="comments" className="font-medium text-gray-700">
+              Slack
+            </label>
+            <p id="comments-description" className="text-gray-500">
+              Get notified when someones posts a comment on a posting.
+            </p>
+          </div>
+        </div>
+        <div className="relative flex items-start">
+          <div className="flex h-5 items-center">
+            <input
+              id="candidates"
+              aria-describedby="candidates-description"
+              name="candidates"
+              type="checkbox"
+              className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+            />
+          </div>
+          <div className="ml-3 text-sm">
+            <label htmlFor="candidates" className="font-medium text-gray-700">
+              Email
+            </label>
+            <p id="candidates-description" className="text-gray-500">
+              Get notified when a dataset is updated.
+            </p>
+          </div>
+        </div>
+        <div className="relative flex items-start">
+          <div className="flex h-5 items-center">
+            <input
+              id="offers"
+              aria-describedby="offers-description"
+              name="offers"
+              type="checkbox"
+              className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+            />
+          </div>
+          <div className="ml-3 text-sm">
+            <label htmlFor="offers" className="font-medium text-gray-700">
+             Phone call
+            </label>
+            <p id="offers-description" className="text-gray-500">
+              Get notified when a something changes
+            </p>
+          </div>
+        </div>
+      </fieldset>
+    )
+  }
+  
