@@ -29,9 +29,10 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
+import { Link } from "react-router-dom"
 
 const navigation = [
-  { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
+  { name: 'Subscriptions', href: '#', icon: HomeIcon, current: true },
   { name: 'Team', href: '#', icon: UsersIcon, current: false },
   { name: 'Projects', href: '#', icon: FolderIcon, current: false },
   { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
@@ -263,7 +264,7 @@ export function Hero() {
           <main className="flex-1">
             <div className="py-6">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-                <h1 className="text-2xl font-semibold text-gray-900">Dashboard</h1>
+                <h1 className="text-2xl font-semibold text-gray-900">Subscriptions</h1>
               </div>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
                 {/* Replace with your content */}
@@ -336,9 +337,8 @@ export default function SubscriptionList() {
     <div className="px-4 sm:px-6 lg:px-8">
       <div className="sm:flex sm:items-center">
         <div className="sm:flex-auto">
-          <h1 className="text-xl font-semibold text-gray-900">Users</h1>
           <p className="mt-2 text-sm text-gray-700">
-            A list of all the users in your account including their name, title, email and role.
+            A list of all your subscriptions
           </p>
         </div>
         <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
@@ -346,7 +346,7 @@ export default function SubscriptionList() {
             type="button"
             className="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto"
           >
-            Add user
+           Unsubscribe all
           </button>
         </div>
       </div>
@@ -384,9 +384,15 @@ export default function SubscriptionList() {
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.type}</td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.role}</td>
                       <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                        <a href="#" className="text-indigo-600 hover:text-indigo-900">
+                    
+                      <a href="/Details" className="mr-4 text-indigo-600 hover:text-indigo-900">
+                          Details<span className="sr-only">, {person.name}</span>
+                        </a>
+
+                      <a href="#" className="text-indigo-600 hover:text-indigo-900">
                           unsubscribe<span className="sr-only">, {person.name}</span>
                         </a>
+                       
                       </td>
                     </tr>
                   ))}
