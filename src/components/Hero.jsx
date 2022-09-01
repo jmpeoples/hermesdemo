@@ -1,5 +1,4 @@
 import { useId, useRef, useState, Fragment } from 'react'
-import Image from 'next/future/image'
 import clsx from 'clsx'
 import { motion, useInView, useMotionValue } from 'framer-motion'
 
@@ -30,6 +29,8 @@ import {
 } from '@heroicons/react/24/outline'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link'
+import Profilepic from '../images/logos/profile.jpg'
+import Image from 'next/image'
 
 const navigation = [
   { name: 'My Subscriptions', href: '/', icon: HomeIcon, current: true },
@@ -221,11 +222,13 @@ export function Hero() {
                   <div>
                     <Menu.Button className="flex max-w-xs items-center rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                       <span className="sr-only">Open user menu</span>
-                      <img
-                        className="h-8 w-8 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                      />
+                      <Image
+                            className="h-8 w-8 rounded-full"
+                            src={Profilepic}
+                            width="35"
+                            height="35"
+                            alt=""
+                          />
                     </Menu.Button>
                   </div>
                   <Transition
