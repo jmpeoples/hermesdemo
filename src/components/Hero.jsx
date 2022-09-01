@@ -33,7 +33,7 @@ import { Link } from "react-router-dom"
 
 const navigation = [
   { name: 'Subscriptions', href: '/', icon: HomeIcon, current: true },
-  { name: 'Browse', href: '#', icon: UsersIcon, current: false },
+  { name: 'Browse', href: '/Browse', icon: UsersIcon, current: false },
   { name: 'Teams', href: '#', icon: FolderIcon, current: false },
   { name: 'Reports', href: '#', icon: ChartBarIcon, current: false },
   { name: 'Settings', href: '#', icon: CalendarIcon, current: false },

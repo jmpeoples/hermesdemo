@@ -13,6 +13,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { PaperClipIcon } from '@heroicons/react/20/solid'
+import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/20/solid'
 
 const navigation = [
     { name: 'Subscriptions', href: '/', icon: HomeIcon, current: true },
@@ -32,7 +33,7 @@ const navigation = [
   }
   
 
-function Details() {
+function Browse() {
     const [sidebarOpen, setSidebarOpen] = useState(false)
     return (
         <div>
@@ -245,11 +246,11 @@ function Details() {
               <main className="flex-1">
                 <div className="py-6">
                   <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-                    <h1 className="mb-8 text-2xl font-semibold text-gray-900">Solarbreeze details</h1>
+                    <h1 className="mb-8 text-2xl font-semibold text-gray-900">Browse</h1>
                   </div>
                   <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
                     {/* Replace with your content */}
-                     <DescriptionList />
+                    <BrowseCards />
                     {/* /End replace */}
                   </div>
                 </div>
@@ -258,118 +259,208 @@ function Details() {
           </div>
       )
   }
-  
-  export default Details
 
 
+const people =[{
+  "name": "Y-Solowarm",
+  "channel": "Slack, Email",
+  "type": "Dataset",
+  "role": "member"
+}, {
+  "name": "Solarbreeze",
+  "channel": "Slack, Email",
+  "type": "Dataset",
+  "role": "member"
+}, {
+  "name": "Job",
+  "channel": "Slack",
+  "type": "Keyword",
+  "role": ""
+}, {
+  "name": "Transcof",
+  "channel": "Email",
+  "type": "Dataset",
+  "role": "member"
+}, {
+  "name": "Bamity",
+  "channel": "Slack, Email",
+  "type": "Dataset",
+  "role": "member"
+}, {
+  "name": "Stringtough",
+  "channel": "Slack, Email",
+  "type": "Keyword",
+  "role": ""
+}, {
+  "name": "Stringtough",
+  "channel": "Email",
+  "type": "Keyword",
+  "role": "member"
+}, {
+  "name": "Biodex",
+  "channel": "Slack",
+  "type": "Keyword",
+  "role": ""
+}, {
+  "name": "Tin",
+  "channel": "Slack",
+  "type": "Dataset",
+  "role": ""
+}, {
+  "name": "Cookley",
+  "channel": "Slack, Email",
+  "type": "Dataset",
+  "role": "",
+  "name": "Y-Solowarm",
+  "channel": "Slack, Email",
+  "type": "Dataset",
+  "role": "member"
+}, {
+  "name": "Solarbreeze",
+  "channel": "Slack, Email",
+  "type": "Dataset",
+  "role": "member"
+}, {
+  "name": "Job",
+  "channel": "Slack",
+  "type": "Keyword",
+  "role": ""
+}, {
+  "name": "Transcof",
+  "channel": "Email",
+  "type": "Dataset",
+  "role": "member"
+}, {
+  "name": "Bamity",
+  "channel": "Slack, Email",
+  "type": "Dataset",
+  "role": "member"
+}, {
+  "name": "Stringtough",
+  "channel": "Slack, Email",
+  "type": "Keyword",
+  "role": ""
+}, {
+  "name": "Stringtough",
+  "channel": "Email",
+  "type": "Keyword",
+  "role": "member"
+}, {
+  "name": "Biodex",
+  "channel": "Slack",
+  "type": "Keyword",
+  "role": ""
+}, {
+  "name": "Tin",
+  "channel": "Slack",
+  "type": "Dataset",
+  "role": ""
+}, {
+  "name": "Cookley",
+  "channel": "Slack, Email",
+  "type": "Dataset",
+  "role": "",
+  "name": "Y-Solowarm",
+  "channel": "Slack, Email",
+  "type": "Dataset",
+  "role": "member"
+}, {
+  "name": "Solarbreeze",
+  "channel": "Slack, Email",
+  "type": "Dataset",
+  "role": "member"
+}, {
+  "name": "Job",
+  "channel": "Slack",
+  "type": "Keyword",
+  "role": ""
+}, {
+  "name": "Transcof",
+  "channel": "Email",
+  "type": "Dataset",
+  "role": "member"
+}, {
+  "name": "Bamity",
+  "channel": "Slack, Email",
+  "type": "Dataset",
+  "role": "member"
+}, {
+  "name": "Stringtough",
+  "channel": "Slack, Email",
+  "type": "Keyword",
+  "role": ""
+}, {
+  "name": "Stringtough",
+  "channel": "Email",
+  "type": "Keyword",
+  "role": "member"
+}, {
+  "name": "Biodex",
+  "channel": "Slack",
+  "type": "Keyword",
+  "role": ""
+}, {
+  "name": "Tin",
+  "channel": "Slack",
+  "type": "Dataset",
+  "role": ""
+}, {
+  "name": "Cookley",
+  "channel": "Slack, Email",
+  "type": "Dataset",
+  "role": ""
+}]
 
-
-
-export function DescriptionList() {
+export function BrowseCards() {
   return (
-    <div className="overflow-hidden bg-white shadow sm:rounded-lg">
-      <div className="px-4 py-5 sm:px-6">
-        <h3 className="text-lg font-medium leading-6 text-gray-900">Subscription Information</h3>
-        <p className="mt-1 max-w-2xl text-sm text-gray-500">details and application.</p>
-        <SelectionList />
-      </div>
-      <div className="border-t border-gray-200 px-4 py-5 sm:p-0">
-        <dl className="sm:divide-y sm:divide-gray-200">
-          <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">Type</dt>
-            <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">Dataset</dd>
+    <ul role="list" className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {people.map((person) => (
+        <li key={person.email} className="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow">
+          <div className="flex w-full items-center justify-between space-x-6 p-6">
+            <div className="flex-1 truncate">
+              <div className="flex items-center space-x-3">
+                <h3 className="truncate text-sm font-medium text-gray-900">{person.name}</h3>
+                <span className="inline-block flex-shrink-0 rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-800">
+                  {person.role}
+                </span>
+              </div>
+              <p className="mt-1 truncate text-sm text-gray-500">{person.title}</p>
+            </div>
+            <button
+            type="button"
+            className="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto"
+          >
+           subscribe
+          </button>
           </div>
-          <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">Role</dt>
-            <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">member</dd>
+          <div>
+            <div className="-mt-px flex divide-x divide-gray-200">
+              <div className="flex w-0 flex-1">
+                <a
+                  href={`mailto:${person.email}`}
+                  className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center rounded-bl-lg border border-transparent py-4 text-sm font-medium text-gray-700 hover:text-gray-500"
+                >
+                  <EnvelopeIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                  <span className="ml-3">Email</span>
+                </a>
+              </div>
+              <div className="-ml-px flex w-0 flex-1">
+                <a
+                  href={`tel:${person.telephone}`}
+                  className="relative inline-flex w-0 flex-1 items-center justify-center rounded-br-lg border border-transparent py-4 text-sm font-medium text-gray-700 hover:text-gray-500"
+                >
+                  <PhoneIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                  <span className="ml-3">Slack</span>
+                </a>
+              </div>
+            </div>
           </div>
-          <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">GET</dt>
-            <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                <p>/item/{`{item_id}`}</p>
-            </dd>
-          </div>
-          <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">POST</dt>
-            <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                <p>/item/{`{item_id}`}</p>
-            </dd>
-          </div>
-          <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">UPDATE</dt>
-            <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                <p>/item/{`{item_id}`}</p>
-            </dd>
-          </div>
-        </dl>
-      </div>
-    </div>
+        </li>
+      ))}
+    </ul>
   )
 }
-
-
-export function SelectionList() {
-    return (
-      <fieldset className="space-y-5">
-        <legend className="sr-only">Notifications</legend>
-        <div className="relative flex items-start">
-          <div className="flex h-5 items-center">
-            <input
-              id="comments"
-              aria-describedby="comments-description"
-              name="comments"
-              type="checkbox"
-              className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-            />
-          </div>
-          <div className="ml-3 text-sm">
-            <label htmlFor="comments" className="font-medium text-gray-700">
-              Slack
-            </label>
-            <p id="comments-description" className="text-gray-500">
-              Get notified when someones posts a comment on a posting.
-            </p>
-          </div>
-        </div>
-        <div className="relative flex items-start">
-          <div className="flex h-5 items-center">
-            <input
-              id="candidates"
-              aria-describedby="candidates-description"
-              name="candidates"
-              type="checkbox"
-              className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-            />
-          </div>
-          <div className="ml-3 text-sm">
-            <label htmlFor="candidates" className="font-medium text-gray-700">
-              Email
-            </label>
-            <p id="candidates-description" className="text-gray-500">
-              Get notified when a dataset is updated.
-            </p>
-          </div>
-        </div>
-        <div className="relative flex items-start">
-          <div className="flex h-5 items-center">
-            <input
-              id="offers"
-              aria-describedby="offers-description"
-              name="offers"
-              type="checkbox"
-              className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-            />
-          </div>
-          <div className="ml-3 text-sm">
-            <label htmlFor="offers" className="font-medium text-gray-700">
-             Phone call
-            </label>
-            <p id="offers-description" className="text-gray-500">
-              Get notified when a something changes
-            </p>
-          </div>
-        </div>
-      </fieldset>
-    )
-  }
   
+
+  
+  export default Browse
