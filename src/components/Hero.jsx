@@ -1,20 +1,6 @@
 import { useId, useRef, useState, Fragment } from 'react'
-import clsx from 'clsx'
-import { motion, useInView, useMotionValue } from 'framer-motion'
+import mixpanel from 'mixpanel-browser';
 
-import { AppScreen } from '@/components/AppScreen'
-import { AppStoreLink } from '@/components/AppStoreLink'
-import { Button } from '@/components/Button'
-import { Container } from '@/components/Container'
-import { PhoneFrame } from '@/components/PhoneFrame'
-import logoBbc from '@/images/logos/bbc.svg'
-import logoCbs from '@/images/logos/cbs.svg'
-import logoCnn from '@/images/logos/cnn.svg'
-import logoFastCompany from '@/images/logos/fast-company.svg'
-import logoForbes from '@/images/logos/forbes.svg'
-import logoHuffpost from '@/images/logos/huffpost.svg'
-import logoTechcrunch from '@/images/logos/techcrunch.svg'
-import logoWired from '@/images/logos/wired.svg'
 import { Dialog, Menu, Transition } from '@headlessui/react'
 import {
   Bars3BottomLeftIcon,
@@ -53,6 +39,7 @@ function classNames(...classes) {
 
 export function Hero() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  mixpanel.init('acc2963ea857676b29b8a0a67802a22f', {debug: true}); 
   return (
     <div>
         <Transition.Root show={sidebarOpen} as={Fragment}>
@@ -387,7 +374,12 @@ export default function SubscriptionList() {
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.role}</td>
                       <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                     
-                      <Link href="/Details" className="mr-4 text-indigo-600 hover:text-indigo-900">
+                      <Link href="/Details" className="mr-4 text-indigo-600 hover:text-indigo-900" 
+                        onClick={
+                        () =>  mixpanel.track('Value Moment', {
+                          'source': "hermes",
+                        })
+                      }>
                           Details<span className="sr-only">, {person.name}</span>
                         </Link>
 
